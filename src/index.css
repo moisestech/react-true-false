@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --true-false-color: lightgreen;
+  --true-false-background: #e6ecf0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* APP */
+
+.app {
+  display: flex;
+  height: 100vh;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  /* background: var(--true-false-background); */
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  padding-bottom: 50px;
+  border-bottom: 1px solid var(--true-false-background);
+}
+
+/* LOGO */
+.logo {
+  width: 80px;
+  height: 80px;
+  border: 1px solid red;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.logo-header {
+  width: 300px;
+  display: flex;
+  background: #cc20cc;
+  border-radius: 0 0 10px 10px;
+  align-items: center;
+}
+
+.logo-header p {
+  margin: 0;
+  padding: 0;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  font-weight: bolder;
+  color: lime;
+}
+
+.slogan h2 {
+  margin-left: 10px;
+  color: var(--true-false-background);
+  font-size: 20px;
+  font-weight: bold;
+  width: 50px;
+}
+
+/* SLOGAN */
+
+.slogan {
+  display: flex;
+  align-items: center;
+}
+
+/* MENU */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.menu a {
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: ghostwhite;
+  margin: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: blue;
+}
+
+.menu a:hover {
+  background: blue;
+  color: white;
+}
+
+/* HOME */
+
+.home {
+  display: flex;
+  background: blue;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.home a {
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* QUIZ */
+
+.quiz-container {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  width: 100%;
+  background: darkblue;
+  position: absolute;
+  padding: 10px 0;
+  flex: 1;
+  height: 100%;
+}
+
+pre.quiz-data {
+  font-size: 12px;
+  font-weight: bold;
+  background: -webkit-linear-gradient(
+    left,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  ); /* For Safari 5.1 to 6.0 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
