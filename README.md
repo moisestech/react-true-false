@@ -1,6 +1,6 @@
 # True False Challenge
 
-<img src="" width="150px"/>
+<img src="https://raw.githubusercontent.com/moisestech/react-true-false/main/public/assets/react-truefalse-logo.png" width="150px"/>
 
 **True or False Quiz challenge created in ReactJS**
 
