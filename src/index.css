@@ -29,6 +29,11 @@ code {
   padding: 0;
 }
 
+.app.container {
+  background: blue;
+  justify-content: center;
+}
+
 /* NAV */
 nav {
   position: fixed;
@@ -52,11 +57,17 @@ nav {
 
 /* LOGO */
 .logo {
-  width: 80px;
+  min-width: 80px;
+  max-width: 80px;
   height: 80px;
   border: 1px solid red;
   margin: 10px;
   border-radius: 10px;
+  overflow: hidden;
+}
+
+.logo img {
+  width: 100%;
 }
 
 .logo-header {
@@ -72,6 +83,7 @@ nav {
   padding: 0;
   margin-block-end: 0;
   margin-block-start: 0;
+  font-size: 1.5em;
   font-weight: bolder;
   color: lime;
 }
@@ -128,39 +140,151 @@ nav {
   justify-content: center;
 }
 
-.home a {
+.home .welcome {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  align-items: center;
+  color: white;
+  height: 100%;
+  justify-content: center;
+}
+
+.welcome div {
+  font-size: 2em;
+}
+
+.home a.start-quiz {
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid white;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
   font-weight: bold;
   color: white;
   text-transform: uppercase;
   text-decoration: none;
+  margin: 20px 0 0 0;
+  font-size: 40px;
+  position: relative;
+  background-color: blue;
+  border: none;
+  font-size: 28px;
+  color: #ffffff;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 1s; /* Safari */
+  transition-duration: 1s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-animation-name: changecolour; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+  animation-name: changecolour;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+.home a.start-quiz:hover {
+  background: white;
+  color: blue;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes changecolour {
+  0% {
+    color: white;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}
+
+/* Standard syntax */
+@keyframes changecolour {
+  0% {
+    color: white;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
 }
 
 /* QUIZ */
 
 .quiz-container {
   display: flex;
-  /* align-items: center; */
+  flex-direction: column;
   justify-content: center;
-  width: 100%;
-  background: darkblue;
+  align-items: center;
   position: absolute;
   padding: 10px 0;
   flex: 1;
   height: 100%;
 }
 
-pre.quiz-data {
-  font-size: 12px;
-  font-weight: bold;
-  background: -webkit-linear-gradient(
-    left,
-    orange,
-    yellow,
-    green,
-    cyan,
-    blue,
-    violet
-  ); /* For Safari 5.1 to 6.0 */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* QUESTION CARD */
+
+.question-card {
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 500px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 25px;
+  background: white;
+  font-weight: bolder;
+}
+
+.question-card .header {
+  display: flex;
+  width: 100%;
+}
+
+.question-card .number {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-card .category {
+  padding: 20px 0;
+  display: flex;
+  flex: 1;
+  justify-content: start;
+}
+
+.question-card .text {
+  font-size: 2em;
+}
+
+/* ANSWER BUTTONS */
+
+.answer-buttons {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.answer-buttons button {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  /* text-align: center; */
+  padding: 20px;
 }
