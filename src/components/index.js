@@ -11,7 +11,6 @@ import Nav from "../components/Nav";
 
 export default function App() {
   const dispatch = useDispatch();
-  // const loading = useSelector((state) => state.questions === null);
 
   useEffect(() => {
     dispatch(handleInitialData());
@@ -32,7 +31,10 @@ export default function App() {
           </Route>
 
           <Route path="/quiz">
-            <Quiz questions={store.questions}/>
+            <Quiz 
+              questions={store.questions}
+              answers={store.answers}
+            />
           </Route>
 
           <Route path="*">
