@@ -5,6 +5,6 @@ export function generateID() {
   );
 }
 
-export function parseQuote (text) {
-  return text.replace(/&quot;/g,'"')
+export function parseQuote(text) {
+  return text.replace(/&quot;/g, '"');
 }
