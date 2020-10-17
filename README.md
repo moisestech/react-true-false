@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/moisestech/react-true-false/main/public/assets/react-truefalse-logo.png" width="150px"/>
 
-**True or False Quiz challenge created in ReactJS** 
+**True or False Quiz challenge created in ReactJS**
 
 🚧 In Progress 🚧
 
@@ -75,13 +75,19 @@ Coming Soon!
 ```
 
 ## ⛰️ Roadmap
+
+- Add Fire base auth
 - Add Leaderboard
 
 ## 📝 Todos
+
 - Component Timeleft
 - Page Results
-- Play again functionality
-- Parse Greek Letters
-- Parse "&#039;"
-- Transition to Next Question
 - 404 if question URL is out of bounds
+- Reset the store to play again
+- Animate between Routes
+- [Implement React CSS Modules](https://github.com/gajus/babel-plugin-react-css-modules)
+- Test going back in url
+- Test multiple url endpoints
+- Test going directly to results page
+- Host in Netlify
