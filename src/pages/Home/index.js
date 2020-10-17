@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 export default function Home() {
   return (
     <div className="home">
-
       <div className="welcome">
         <div>Welcome to the Trivia Challenge!</div>
         <div>You will be presented with 10 True or False questions.</div>
@@ -12,7 +11,6 @@ export default function Home() {
           Begin
         </NavLink>
       </div>
-      
     </div>
   );
 }
