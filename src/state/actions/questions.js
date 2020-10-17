@@ -14,11 +14,10 @@ export function handleInitialData() {
   return (dispatch) => {
     dispatch(showLoading());
 
-    return getInitialData()
-      .then(({ questions }) => {
-        console.log("handleInitialData", questions);
-        dispatch(hideLoading());
-        dispatch(receiveQuestions(questions));
-      })
+    return getInitialData().then(({ questions }) => {
+      console.log("handleInitialData", questions);
+      dispatch(hideLoading());
+      dispatch(receiveQuestions(questions));
+    });
   };
 }
