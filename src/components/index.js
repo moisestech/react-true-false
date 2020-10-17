@@ -6,6 +6,7 @@ import { handleInitialData } from "../state/actions/questions";
 // COMPONENTS
 import Home from "../pages/Home";
 import Quiz from "../pages/Quiz";
+import Result from "../pages/Result";
 import NotFound from "../pages/NotFound";
 import Nav from "../components/Nav";
 
@@ -31,10 +32,11 @@ export default function App() {
           </Route>
 
           <Route path="/quiz">
-            <Quiz 
-              questions={store.questions}
-              answers={store.answers}
-            />
+            <Quiz questions={store.questions} answers={store.answers} />
+          </Route>
+
+          <Route path="/result">
+            <Result />
           </Route>
 
           <Route path="*">
