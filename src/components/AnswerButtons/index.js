@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import { useDispatch } from "react-redux"
-import { handleAnswerQuestion } from '../../state/actions/answers';
+import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { handleAnswerQuestion } from "../../state/actions/answers";
 
 export default function AnswerButtons({ questionNumber, questions }) {
   const dispatch = useDispatch();
@@ -10,23 +10,29 @@ export default function AnswerButtons({ questionNumber, questions }) {
   const handleAnswer = (e, answer) => {
     e.preventDefault();
 
-    const correct_answer = questions[(questionNumber-1)].correct_answer.toLowerCase()
-    if (answer == correct_answer ) {
-      dispatch(handleAnswerQuestion(questionNumber, "correct"))
+    const correct_answer = questions[
+      questionNumber - 1
+    ].correct_answer.toLowerCase();
+    if (answer == correct_answer) {
+      dispatch(handleAnswerQuestion(questionNumber, "correct"));
     } else {
-      dispatch(handleAnswerQuestion(questionNumber, "wrong"))
+      dispatch(handleAnswerQuestion(questionNumber, "wrong"));
     }
-  }
+  };
 
   return (
     <div className="answer-buttons">
-      <button className="true" onClick={(e) => handleAnswer(e, "true")}>TRUE</button>
-      <button className="false" onClick={(e) => handleAnswer(e, "false")}>FALSE</button>
+      <button className="true" onClick={(e) => handleAnswer(e, "true")}>
+        TRUE
+      </button>
+      <button className="false" onClick={(e) => handleAnswer(e, "false")}>
+        FALSE
+      </button>
     </div>
-  )
+  );
 }
 
 AnswerButtons.propTypes = {
   questionNumber: PropTypes.number.isRequired,
-  questions: PropTypes.object.isRequired
-}
+  questions: PropTypes.object.isRequired,
+};
