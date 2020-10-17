@@ -1,24 +1,23 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 // ROUTER
-import { Redirect } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 
-
-export default function Question ({
-  category, 
+export default function Question({
+  category,
   text,
-  questionNumber, 
+  questionNumber,
   totalQuestions,
-  isAnswered}) {
-
-  console.log("isAnswered", isAnswered)
+  isAnswered,
+}) {
+  console.log("isAnswered", isAnswered);
 
   // Redirect if answered
   if (isAnswered === true) {
-    if(questionNumber === 10) {
-      return <Redirect to={"/result"} />
+    if (questionNumber === 10) {
+      return <Redirect to={"/result"} />;
     } else {
-      return <Redirect to={`/quiz?number=${questionNumber + 1}`} />
+      return <Redirect to={`/quiz?number=${questionNumber + 1}`} />;
     }
   }
 
@@ -26,11 +25,13 @@ export default function Question ({
     <div className="question-card">
       <div className="header">
         <div className="category">Category: {category}</div>
-        <div className="number">{questionNumber} out of {totalQuestions}</div>
+        <div className="number">
+          {questionNumber} out of {totalQuestions}
+        </div>
       </div>
-      <div className="text" dangerouslySetInnerHTML={{__html: text}} />
+      <div className="text" dangerouslySetInnerHTML={{ __html: text }} />
     </div>
-  )
+  );
 }
 
 Question.propTypes = {
@@ -38,5 +39,5 @@ Question.propTypes = {
   text: PropTypes.string.isRequired,
   correct_answer: PropTypes.string.isRequired,
   questionNumber: PropTypes.number.isRequired,
-  isAnswered: PropTypes.bool
-}
+  isAnswered: PropTypes.bool,
+};
