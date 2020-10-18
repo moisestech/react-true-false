@@ -1,10 +1,9 @@
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../Logo";
+import GlowButton from "../GlowButton";
 
 export default function Nav() {
   const { pathname } = useLocation();
-
-  console.log("pathname", pathname);
 
   return (
     <nav className="nav">
@@ -13,7 +12,7 @@ export default function Nav() {
       <div className="menu">
         {pathname === "/" ? null : (
           <NavLink exact to="/" activeClassName="active">
-            Restart
+            <GlowButton text="Restart" />
           </NavLink>
         )}
       </div>
