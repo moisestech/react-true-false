@@ -1,6 +1,9 @@
 import ReactDOM from "react-dom";
 import "./index.css";
 
+// ROUTER
+import { BrowserRouter as Router } from "react-router-dom";
+
 // COMPONENTS
 import App from "./components";
 
@@ -16,7 +19,9 @@ const store = createStore(reducer, middleware);
 ReactDOM.render(
   <Provider store={store}>
     <LoadingBar />
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById("root")
 );
