@@ -87,6 +87,7 @@ Coming Soon!
 - Reset the store to play again
 - Animate between Routes
 - [Implement React CSS Modules](https://github.com/gajus/babel-plugin-react-css-modules)
+- Redux Toolkit
 - Test going back in url
 - Test multiple url endpoints
 - Test going directly to results page
