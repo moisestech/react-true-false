@@ -1,5 +1,14 @@
 import { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+// ROUTER
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useLocation,
+} from "react-router-dom";
+
+// REDUX
 import { useSelector, useDispatch } from "react-redux";
 import { handleInitialData } from "../state/actions/questions";
 
@@ -10,40 +19,45 @@ import Result from "../pages/Result";
 import NotFound from "../pages/NotFound";
 import Nav from "../components/Nav";
 
+// TRANSITION GROUP
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 export default function App() {
   const dispatch = useDispatch();
+  let location = useLocation();
 
   useEffect(() => {
     dispatch(handleInitialData());
   }, [dispatch]);
 
   const store = useSelector((store) => store);
-
-  console.log("store", store);
+  //console.log("store", store);
 
   return (
-    <Router>
-      <div className="app container">
-        <Nav />
+    <div className="app">
+      <Nav />
+      {/* <TransitionGroup className="container">
+        <CSSTransition timeout={500} classNames="fade" key={location.key}> */}
+      {/* location={location} */}
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
 
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
+        <Route path="/quiz">
+          <Quiz questions={store.questions} answers={store.answers} />
+        </Route>
 
-          <Route path="/quiz">
-            <Quiz questions={store.questions} answers={store.answers} />
-          </Route>
+        <Route path="/result">
+          <Result />
+        </Route>
 
-          <Route path="/result">
-            <Result />
-          </Route>
-
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
+      {/* </CSSTransition>
+      </TransitionGroup> */}
+    </div>
   );
 }
