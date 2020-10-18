@@ -1,54 +1,47 @@
 import { useEffect, useState } from "react";
-
-// const isQuizValid = (quizLength) => {
-//   console.group("IS-QUIZ-VALID");
-//   console.log("QUIZ-LENGTH:", quizLength);
-//   console.groupEnd();
-//   if (quizLength === 0 || quizLength === undefined) {
-//     return false;
-//   } else {
-//     true;
-//   }
-// };
-
-// const isQuestionValid = (questionNumber, quizLength) => {
-//   //console.group("IS-QUESTION-VALID");
-//   console.log("QUESTION-NUMBER:", questionNumber);
-//   console.log("QUIZ-LENGTH:", quizLength);
-//   //console.groupEnd();
-//   if (questionNumber === 0) {
-//     console.log("QUESTION NUMBER = 0", questionNumber === 0);
-//     return false;
-//   } else if (questionNumber > quizLength && quizLength !== 0) {
-//     console.log("GREATER THAN QUIZ-LENGTH:", questionNumber > quizLength);
-//     console.log("QUIZ-LENGTH-IS-NOT 0:", quizLength !== 0);
-//     return false;
-//   } else if (quizLength !== 0) {
-//     console.log("GREATER THAN QUIZ-LENGTH:", questionNumber > quizLength);
-//     return true;
-//   } else {
-//     return true;
-//   }
-// };
+import { useSelector } from "react-redux";
 
 export default function useQuizValid(questionNumber, quizLength) {
   const [isQuizValid, setIsQuizValid] = useState(false);
+  const answers = useSelector((state) => state.answers);
+  const question = questionNumber;
 
   useEffect(() => {
     if (quizLength > 0) {
-      if (questionNumber === 0) {
-        console.log("QUESTION-NUMBER:", questionNumber);
+      if (question === 0) {
+        console.log("QUESTION-NUMBER CANNOT BE 0:", question);
         setIsQuizValid(false);
-      } else if (questionNumber > quizLength) {
-        console.log("GREATER THAN QUIZ-LENGTH:", questionNumber > quizLength);
+      } else if (typeof question === "string") {
+        console.log(
+          "QUESTION-NUMBER CANNOT BE STRING:",
+          question,
+          typeof question
+        );
+        setIsQuizValid(false);
+      } else if (question > quizLength) {
+        console.log(
+          "QUESTION-NUMBER CANNOT BE GREATER THAN QUIZ LENGTH:",
+          question,
+          question > quizLength
+        );
+        setIsQuizValid(false);
+      } else if (question !== 1 && answers[question - 2] === undefined) {
+        console.log(
+          "ALL PREVIOUS QUESTIONS MUST BE ANSWERED UNLESS IS 1:",
+          question,
+          `IS-ANSWERED ${answers[question - 2]}`,
+          "ANSWERS",
+          answers
+        );
         setIsQuizValid(false);
       } else {
-        console.log("USE-QUIZ-VALID | QUESTION-NUMBER:", questionNumber);
-        console.log("USE-QUIZ-VALID | QUIZ-LENGTH:", quizLength);
+        console.log("QUIZ-VALID IS TRUE:", question);
         setIsQuizValid(true);
       }
+    } else {
+      setIsQuizValid(false);
     }
-  }, [questionNumber, quizLength]);
+  }, [question, quizLength]);
 
   return isQuizValid;
 }
