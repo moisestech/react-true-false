@@ -8,7 +8,7 @@ export default function AnswerButtons({ questionNumber, questions }) {
   // check string of answer vs corect_answer
   // dispatch wrong or correct
   const handleAnswer = (e, answer) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     const correct_answer = questions[
       questionNumber - 1
