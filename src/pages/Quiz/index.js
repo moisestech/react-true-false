@@ -8,9 +8,12 @@ import queryString from "query-string";
 // COMPONENTS
 import AnswerButtons from "../../components/AnswerButtons";
 import FilterQuiz from "../../components/FilterQuiz";
+import ResultSymbol from "../../components/ResultSymbol";
+import NotFound from "../NotFound";
 
 // CUSTOM HOOK
 import useQuizValid from "../../hooks/useQuizValid";
+import useQueryValid from "../../hooks/useQueryValid";
 
 export default function Quiz({ questions, answers }) {
   const [quizLength, setQuizLength] = useState(0);
@@ -21,8 +24,8 @@ export default function Quiz({ questions, answers }) {
   const { number } = queryString.parse(search);
 
   // only return typeof number from parsed queryString
-  let questionNumber = parseInt(number);
-  typeof questionNumber !== number ? (questionNumber = 0) : null;
+  const validQuery = useQueryValid(number);
+  const questionNumber = validQuery;
 
   // set length of quiz from props
   useEffect(() => {
@@ -35,26 +38,27 @@ export default function Quiz({ questions, answers }) {
   console.log("IS-QUIZ-VALID:", isQuizValid);
 
   return (
-    <div className="quiz-container">
-      {/* {isQuizValid(quizLength) ? <p>Loading</p> : null} */}
-
+    <>
       {isQuizValid ? (
-        <FilterQuiz
-          questions={questions}
-          questionNumber={questionNumber}
-          quizLength={quizLength}
-          answers={answers}
-        />
+        <div className="quiz-container">
+          <FilterQuiz
+            questions={questions}
+            questionNumber={questionNumber}
+            quizLength={quizLength}
+            answers={answers}
+          />
+          <AnswerButtons
+            questionNumber={questionNumber}
+            questions={questions}
+          />
+          <ResultSymbol questionNumber={questionNumber} />
+        </div>
       ) : (
-        <p>SHOULD REDIRECT</p>
+        <NotFound />
       )}
-
-      <AnswerButtons questionNumber={questionNumber} questions={questions} />
-    </div>
+    </>
   );
 }
-
-//<Redirect to={"/"} />
 
 Quiz.propTypes = {
   questions: PropTypes.object.isRequired,
