@@ -1,17 +1,21 @@
+import "./question.css";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
+
+import AnimatedTyping from "../AnimatedTyping";
 
 // ROUTER
 import { Redirect } from "react-router-dom";
 
 export default function Question({
   category,
-  text,
+  text = "",
   questionNumber,
   quizLength,
   isAnswered,
 }) {
   const [nextLocation, setNextLocation] = useState("");
+  const [htmlText, setHtmlText] = useState("");
 
   console.group("QUESTION-COMP:", questionNumber);
   console.log("isAnswered", isAnswered);
@@ -26,7 +30,11 @@ export default function Question({
         setNextLocation("next-question");
       }
     }
-  }, [isAnswered, questionNumber]);
+
+    if (text !== undefined) {
+      setHtmlText(htmlText);
+    }
+  }, [isAnswered, questionNumber, text]);
 
   return nextLocation === "next-question" ? (
     <Redirect to={`/quiz?number=${questionNumber + 1}`} />
@@ -40,7 +48,12 @@ export default function Question({
           {questionNumber} out of {quizLength}
         </div>
       </div>
-      <div className="text" dangerouslySetInnerHTML={{ __html: text }} />
+      <AnimatedTyping
+        className="animated-typing"
+        dangerouslySetInnerHTML={[{ __html: text }]}
+      >
+        <div className="text" dangerouslySetInnerHTML={{ __html: text }} />
+      </AnimatedTyping>
     </div>
   );
 }
