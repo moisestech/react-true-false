@@ -1,3 +1,4 @@
+import "./results.css";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
