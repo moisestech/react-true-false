@@ -1,3 +1,4 @@
+import "./quiz.css";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
@@ -9,6 +10,7 @@ import queryString from "query-string";
 import AnswerButtons from "../../components/AnswerButtons";
 import FilterQuiz from "../../components/FilterQuiz";
 import ResultSymbol from "../../components/ResultSymbol";
+import AnimatedTimer from "../../components/AnimatedTimer";
 import NotFound from "../NotFound";
 
 // CUSTOM HOOK
@@ -52,6 +54,7 @@ export default function Quiz({ questions, answers }) {
             questions={questions}
           />
           <ResultSymbol questionNumber={questionNumber} />
+          <AnimatedTimer />
         </div>
       ) : (
         <NotFound />
