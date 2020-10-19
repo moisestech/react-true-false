@@ -1,3 +1,5 @@
+import "../../result-symbol.css";
+
 export default function Wrong() {
   return (
     <div className="wrong">
