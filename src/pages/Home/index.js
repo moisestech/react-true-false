@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import GlowButton from "../../components/GlowButton";
+import "./home.css";
 
 export default function Home() {
   return (
