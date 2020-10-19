@@ -1,3 +1,4 @@
+import "./result-symbol.css";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
