@@ -1,0 +1,40 @@
+/* LOGO */
+.logo {
+  min-width: 80px;
+  max-width: 80px;
+  height: 80px;
+  border: 1px solid red;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.logo-header {
+  width: 300px;
+  display: flex;
+  background: #cc20cc;
+  border-radius: 0 0 10px 10px;
+  align-items: center;
+}
+
+.logo-header p {
+  margin: 0;
+  padding: 0;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: lime;
+}
+
+.slogan h2 {
+  margin-left: 10px;
+  color: var(--true-false-background);
+  font-size: 20px;
+  font-weight: bold;
+  width: 50px;
+}
