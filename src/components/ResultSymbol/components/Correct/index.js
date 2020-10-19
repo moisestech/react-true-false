@@ -1,3 +1,4 @@
+import "../../result-symbol.css";
 export default function Correct() {
   return (
     <div className="correct">
