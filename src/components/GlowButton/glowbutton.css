@@ -1,0 +1,41 @@
+.glow-button {
+  -webkit-transition-duration: 1s; /* Safari */
+  transition-duration: 1s;
+  -webkit-animation-name: changecolour; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+  animation-name: changecolour;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+.glow-button:hover {
+  background: white;
+  color: blue;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes changecolour {
+  0% {
+    color: white;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}
+
+/* Standard syntax */
+@keyframes changecolour {
+  0% {
+    color: white;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}
