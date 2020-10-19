@@ -1,3 +1,4 @@
+import "./answerbuttons.css";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { handleAnswerQuestion } from "../../state/actions/answers";
@@ -8,7 +9,7 @@ export default function AnswerButtons({ questionNumber, questions }) {
   // check string of answer vs corect_answer
   // dispatch wrong or correct
   const handleAnswer = (e, answer) => {
-    // e.preventDefault();
+    e.preventDefault();
 
     const correct_answer = questions[
       questionNumber - 1
@@ -22,10 +23,13 @@ export default function AnswerButtons({ questionNumber, questions }) {
 
   return (
     <div className="answer-buttons">
-      <button className="true" onClick={(e) => handleAnswer(e, "true")}>
+      <button className="button true" onClick={(e) => handleAnswer(e, "true")}>
         TRUE
       </button>
-      <button className="false" onClick={(e) => handleAnswer(e, "false")}>
+      <button
+        className="button false"
+        onClick={(e) => handleAnswer(e, "false")}
+      >
         FALSE
       </button>
     </div>

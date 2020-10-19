@@ -1,0 +1,35 @@
+/* ANSWER BUTTONS */
+
+.answer-buttons {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  flex: 1;
+  font-size: 3em;
+  font-weight: bold;
+  color: white;
+  justify-content: center;
+  margin: 20px 0 0 0;
+  /* text-align: center; */
+  padding: 20px;
+  border-width: 0px;
+}
+
+.button.true {
+  background: rgb(64, 211, 248);
+  margin: 30px 50px 0 0;
+  border-radius: 40px 10px 10px 40px;
+  box-shadow: -5px 10px 5px 2px rgb(18 27 25);
+}
+
+.button.false {
+  background: rgb(21, 236, 118);
+  margin: 30px 0 0 50px;
+  border-radius: 10px 40px 40px 10px;
+  box-shadow: 5px 10px 5px 2px rgb(18 27 25);
+}
