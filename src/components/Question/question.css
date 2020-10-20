@@ -1,0 +1,46 @@
+/* QUESTION CARD */
+
+.question-card {
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 500px;
+  height: 300px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  padding: 25px;
+  background: white;
+  font-weight: bolder;
+  z-index: 10;
+  border: 20px solid #5dc3c3;
+}
+
+.question-card .header {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--true-false-background);
+  width: 100%;
+  max-height: 50px;
+}
+
+.question-card .number {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-card .category {
+  padding: 20px 0;
+  display: flex;
+  flex: 1;
+  justify-content: start;
+}
+
+.question-card .text {
+  padding-top: 20px;
+  font-size: 2em;
+  display: flex;
+  justify-content: left;
+}
