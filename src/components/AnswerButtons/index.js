@@ -23,11 +23,14 @@ export default function AnswerButtons({ questionNumber, questions }) {
 
   return (
     <div className="answer-buttons">
-      <button className="button true" onClick={(e) => handleAnswer(e, "true")}>
+      <button
+        className="button hvr-grow true "
+        onClick={(e) => handleAnswer(e, "true")}
+      >
         TRUE
       </button>
       <button
-        className="button false"
+        className="button hvr-grow false"
         onClick={(e) => handleAnswer(e, "false")}
       >
         FALSE
