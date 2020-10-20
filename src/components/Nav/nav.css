@@ -2,7 +2,6 @@
 .nav {
   position: fixed;
   top: 0;
-  /* background: var(--true-false-background); */
   margin: 0;
   width: 100%;
   display: flex;
