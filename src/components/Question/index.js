@@ -2,7 +2,7 @@ import "./question.css";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
-import AnimatedTyping from "../AnimatedTyping";
+import MemoizedTyping from "../Typing";
 
 // ROUTER
 import { Redirect } from "react-router-dom";
@@ -17,9 +17,9 @@ export default function Question({
   const [nextLocation, setNextLocation] = useState("");
   const [htmlText, setHtmlText] = useState("");
 
-  console.group("QUESTION-COMP:", questionNumber);
-  console.log("isAnswered", isAnswered);
-  console.groupEnd();
+  //console.group("QUESTION-COMP:", questionNumber);
+  //console.log("isAnswered", isAnswered);
+  //console.groupEnd();
 
   useEffect(() => {
     // Redirect if answered
@@ -48,12 +48,9 @@ export default function Question({
           {questionNumber} out of {quizLength}
         </div>
       </div>
-      <AnimatedTyping
-        className="animated-typing"
-        dangerouslySetInnerHTML={[{ __html: text }]}
-      >
+      {/* <MemoizedTyping className="animated-typing">
         <div className="text" dangerouslySetInnerHTML={{ __html: text }} />
-      </AnimatedTyping>
+      </MemoizedTyping> */}
     </div>
   );
 }
