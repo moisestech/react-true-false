@@ -19,10 +19,10 @@ export default function FilterQuiz({
     const length = answers.length;
     const answerPosition = answers[question - 1];
 
-    console.group("FILTER-QUIZ-COMP:", question);
-    console.log("QUIZ-LENGTH:", quizLength);
-    console.log("ANSWER-POSITION:", answers[question - 1]);
-    console.groupEnd();
+    //console.group("FILTER-QUIZ-COMP:", question);
+    //console.log("QUIZ-LENGTH:", quizLength);
+    //console.log("ANSWER-POSITION:", answers[question - 1]);
+    //console.groupEnd();
 
     if (length > 0) {
       if (answerPosition !== undefined) {
