@@ -5,9 +5,6 @@ export default function Logo() {
       <span className="logo">
         <img src="https://raw.githubusercontent.com/moisestech/react-true-false/main/public/assets/react-truefalse-logo.png" />
       </span>
-      <p>
-        <i>True +/- False Challenge</i>
-      </p>
     </div>
   );
 }
