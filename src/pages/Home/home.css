@@ -15,10 +15,13 @@
   color: white;
   height: 100%;
   justify-content: center;
+  margin: 20px;
 }
 
 .welcome > div {
   font-size: 2em;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .start-quiz {
@@ -40,4 +43,13 @@
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
+  background: #ec61ec40;
+}
+
+.start-quiz:hover {
+  background: #e6ecf07d;
+}
+
+.start-quiz .glow-button:hover {
+  background: none !important;
 }
