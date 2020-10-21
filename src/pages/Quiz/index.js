@@ -3,15 +3,16 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 // ROUTING
-import { Redirect, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import queryString from "query-string";
 
 // COMPONENTS
 import AnswerButtons from "../../components/AnswerButtons";
 import FilterQuiz from "../../components/FilterQuiz";
-import ResultSymbol from "../../components/ResultSymbol";
-import Timer from "../../components/Timer";
 import NotFound from "../NotFound";
+
+// REDUX
+import { useSelector } from "react-redux";
 
 // CUSTOM HOOK
 import useQuizValid from "../../hooks/useQuizValid";
@@ -37,7 +38,10 @@ export default function Quiz({ questions, answers }) {
   // returns quiz valid boolean
   const isQuizValid = useQuizValid(questionNumber, quizLength);
 
-  console.log("IS-QUIZ-VALID:", isQuizValid);
+  // question states
+  const { finishedTyping } = useSelector((state) => state.typing);
+  console.log("finishedTyping: >>", finishedTyping);
+  //console.log("IS-QUIZ-VALID:", isQuizValid);
 
   return (
     <>
@@ -53,8 +57,6 @@ export default function Quiz({ questions, answers }) {
             questionNumber={questionNumber}
             questions={questions}
           />
-          <ResultSymbol questionNumber={questionNumber} />
-          <Timer questionNumber={questionNumber} />
         </div>
       ) : (
         <NotFound />
