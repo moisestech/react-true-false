@@ -1,0 +1,14 @@
+.emoji-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 150px;
+  height: 150px;
+}
+
+.emoji-gif {
+  width: 100%;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
