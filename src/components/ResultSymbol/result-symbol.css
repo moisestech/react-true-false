@@ -3,6 +3,7 @@
 .result-symbol.container {
   position: absolute;
   pointer-events: none;
+  z-index: 20;
 }
 
 .result-symbol {
@@ -10,15 +11,13 @@
   display: block;
   /* margin: 40px auto 0; */
   opacity: 1;
-  -webkit-transition-duration: 1s; /* Safari */
-  transition-duration: 1s;
+  /*-webkit-animation: fade-in-out 3s ease-in-out forwards; */
+  /*animation: fade-in-out 3s ease-in-out forwards; */
   /* -webkit-animation-name: fade-in-out; Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
-  -webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
-  /* animation-name: fade-in-out; */
-  animation-duration: 1.5s;
-  animation-iteration-count: alternate;
-  /* transition: opacity 500ms ease-in; */
+  /* animation:  ease;
+  animation-duration: 3s;
+  animation-iteration-count: alternate; */
+  transition: opacity 3s ease-in;
 }
 
 .result-symbol.container > div {
@@ -51,25 +50,11 @@
   animation: dash-check 0.9s 0.35s ease-in-out forwards;
 }
 
-p.result {
-  text-align: center;
-  margin: 20px 0 60px;
-  font-size: 1.25em;
-}
-
-p.result.success {
-  color: #73af55;
-}
-
-p.result.error {
-  color: #d06079;
-}
-
-.correct {
+.result-symbol .correct {
   background: green;
 }
 
-.wrong {
+.result-symbol .wrong {
   background: red;
 }
 
