@@ -12,7 +12,7 @@ export default function Wrong() {
         <circle
           className="path circle"
           fill="none"
-          stroke="#D06079"
+          stroke="#ffcccb"
           strokeWidth="6"
           strokeMiterlimit="10"
           cx="65.1"
@@ -22,7 +22,7 @@ export default function Wrong() {
         <line
           className="path line"
           fill="none"
-          stroke="#D06079"
+          stroke="#ffcccb"
           strokeWidth="6"
           strokeLinecap="round"
           strokeMiterlimit="10"
@@ -34,7 +34,7 @@ export default function Wrong() {
         <line
           className="path line"
           fill="none"
-          stroke="#D06079"
+          stroke="#ffcccb"
           strokeWidth="6"
           strokeLinecap="round"
           strokeMiterlimit="10"
