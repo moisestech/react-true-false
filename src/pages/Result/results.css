@@ -1,0 +1,17 @@
+/* RESULTS */
+
+.results {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  align-items: center;
+  color: white;
+  height: 100%;
+  justify-content: center;
+}
+
+.results .result-text,
+.results .score-text,
+.results .score {
+  font-size: 2em;
+}
