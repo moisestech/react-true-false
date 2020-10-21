@@ -1,28 +1,32 @@
 import "./timer.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 // REDUX
 import { useDispatch, useSelector } from "react-redux";
 import { handleAnswerQuestion } from "../../state/actions/answers";
+import { handleFinishedTyping } from "../../state/actions/typing";
 
 // TRANSITIONS
 import { CSSTransition } from "react-transition-group";
 
-export default function Timer({ questionNumber }) {
+export default function Timer({ questionNumber, isFinishedTyping }) {
   const dispatch = useDispatch();
-  const { finishedTyping, resetTyping } = useSelector((state) => state.typing);
-  console.log("TIMER useSelector finishedTyping :>> ", finishedTyping);
-  console.log("TIMER useSelector resetTyping :>> ", resetTyping);
 
-  const [animating, setAnimating] = useState(finishedTyping);
+  //console.log("TIMER useSelector finishedTyping :>> ", finishedTyping);
+
+  const [animating, setAnimating] = useState(false);
   const [timeLeft, setTimeLeft] = useState(10);
   const intervalRef = useRef(null);
+
+  useEffect(() => {
+    setAnimating(isFinishedTyping);
+  }, [isFinishedTyping]);
 
   function startTimer() {
     console.log("START-TIME ON-ENTERED TRUE");
 
     intervalRef.current = setInterval(() => {
-      setAnimating(true);
+      //setAnimating(true);
       setTimeLeft((timeLeft) => {
         if (timeLeft >= 1) {
           console.log("TIME-LEFT", timeLeft);
@@ -39,15 +43,15 @@ export default function Timer({ questionNumber }) {
     clearInterval(intervalRef.current);
     intervalRef.current = null;
     setAnimating(false);
-
-    // restting isFinishedTyping false
-    const isFinished = false;
-    distpatch(handleFinishedTyping(isFinished));
-    handleTimeOut();
   }
 
   function handleTimeOut() {
     console.log("DISPATCH TIME-OUT");
+
+    // reset redux state
+    // isFinishedTyping false
+    const isFinished = false;
+    dispatch(handleFinishedTyping(isFinished));
     dispatch(handleAnswerQuestion(questionNumber, "wrong"));
   }
 
@@ -73,7 +77,7 @@ export default function Timer({ questionNumber }) {
           onEntering={() => console.log("RECT ON-ENTERING")}
           onEnter={() => console.log("RECT ON-ENTER")}
           onEntered={() => startTimer()}
-          onExit={() => console.log("RECT ON-EXIT")}
+          onExit={() => handleTimeOut()}
           onExiting={() => console.log("RECT ON-EXITING")}
           onExited={() => console.log("RECT ON-EXITED")}
         >
