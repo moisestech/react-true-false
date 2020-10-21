@@ -52,10 +52,12 @@
 
 .result-symbol .correct {
   background: green;
+  border-radius: 50%;
 }
 
 .result-symbol .wrong {
   background: red;
+  border-radius: 50%;
 }
 
 @-webkit-keyframes fade-in-out {
