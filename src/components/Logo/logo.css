@@ -1,21 +1,34 @@
 /* LOGO */
 .logo {
   border: none;
-  margin: 10px;
-  border-radius: 50px;
+  border-radius: 20px;
+  width: 150px;
+  height: 150px;
   overflow: hidden;
 }
 
 .logo img {
-  width: 100%;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.logo.active {
+  width: 80px;
+  height: 80px;
+}
+
+.logo.active img {
+  width: 80px;
+  height: 80px;
 }
 
 .logo-header {
   width: 200px;
-  /* height: 400px; */
   display: flex;
-  border: none;
+  justify-content: center;
   align-items: center;
+  border: none;
 }
 
 .logo-header p {
