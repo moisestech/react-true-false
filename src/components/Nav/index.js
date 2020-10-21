@@ -1,22 +1,15 @@
 import "./nav.css";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Logo from "../Logo";
-import GlowButton from "../GlowButton";
 
 export default function Nav() {
   const { pathname } = useLocation();
 
+  console.log("pathname >>", pathname);
+
   return (
     <nav className="nav">
-      <Logo />
-
-      <div className="menu">
-        {pathname === "/" ? null : (
-          <NavLink exact to="/">
-            <GlowButton text="Restart" />
-          </NavLink>
-        )}
-      </div>
+      <Logo activeLocation={pathname} />
     </nav>
   );
 }
