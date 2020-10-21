@@ -2,10 +2,17 @@ import "./question.css";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
+// COMPONENTS
 import MemoizedTyping from "../Typing";
+import Category from "./components/Category";
+import Emoji from "./components/Emoji";
 
 // ROUTER
 import { Redirect } from "react-router-dom";
+
+// REDUX
+import { useDispatch, useSelector } from "react-redux";
+import { handleQuizComplete } from "../../state/actions/quiz";
 
 export default function Question({
   category,
@@ -14,25 +21,26 @@ export default function Question({
   quizLength,
   isAnswered,
 }) {
+  const dispatch = useDispatch();
+  const quizComplete = useSelector((state) => state.quizComplete);
   const [nextLocation, setNextLocation] = useState("");
   const [htmlText, setHtmlText] = useState("");
 
-  //console.group("QUESTION-COMP:", questionNumber);
-  //console.log("isAnswered", isAnswered);
-  //console.groupEnd();
-
   useEffect(() => {
+    if (text !== undefined) {
+      setHtmlText(htmlText);
+    }
+
     // Redirect if answered
     if (isAnswered === true) {
       if (questionNumber === 10) {
+        const isComplete = true;
+        //dispatch(handleQuizComplete(isComplete));
+
         setNextLocation("result");
       } else {
         setNextLocation("next-question");
       }
-    }
-
-    if (text !== undefined) {
-      setHtmlText(htmlText);
     }
   }, [isAnswered, questionNumber, text]);
 
@@ -43,14 +51,15 @@ export default function Question({
   ) : (
     <div className="question-card">
       <div className="header">
-        <div className="category">Category: {category}</div>
+        <Category category={category} />
         <div className="number">
           {questionNumber} out of {quizLength}
         </div>
       </div>
-      {/* <MemoizedTyping className="animated-typing">
+      <MemoizedTyping className="animated-typing">
         <div className="text" dangerouslySetInnerHTML={{ __html: text }} />
-      </MemoizedTyping> */}
+      </MemoizedTyping>
+      {!quizComplete ? <Emoji /> : null}
     </div>
   );
 }
