@@ -19,11 +19,6 @@ export default function FilterQuiz({
     const length = answers.length;
     const answerPosition = answers[question - 1];
 
-    //console.group("FILTER-QUIZ-COMP:", question);
-    //console.log("QUIZ-LENGTH:", quizLength);
-    //console.log("ANSWER-POSITION:", answers[question - 1]);
-    //console.groupEnd();
-
     if (length > 0) {
       if (answerPosition !== undefined) {
         setIsAnswered(false);
@@ -39,7 +34,7 @@ export default function FilterQuiz({
     } else {
       setIsAnswered(false);
     }
-  }, [questionNumber, answers, quizLength]);
+  }, [questionNumber, answers]);
 
   return Object.entries(questions)
     .filter((question) => parseInt(question[0]) + 1 === questionNumber)
