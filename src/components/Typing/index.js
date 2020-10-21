@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./typing.css";
 import PropTypes from "prop-types";
 
@@ -10,33 +10,38 @@ import AnimTyping from "react-typing-animation";
 import he from "he";
 
 export default function Typing({ children }) {
-  const distpatch = useDispatch();
-  const { resetTyping, finishedTyping } = useSelector((state) => state.typing);
+  const [isTyping, setIsTyping] = useState(true);
+  const dispatch = useDispatch();
+  const { finishedTyping } = useSelector((state) => state.typing);
 
-  console.group("TYPING REDUCERS:");
-  console.log("RESET-TYPING:", resetTyping);
-  console.log("FINISHED-TYPING:", finishedTyping);
-  console.groupEnd();
+  // console.group("TYPING REDUCERS:");
+  // console.log("STATE: FINISHED-TYPING: >>", finishedTyping);
+  // console.groupEnd();
+
+  // useEffect(() => {
+  //   if (isTyping === true && finishedTyping === true) {
+  //     setIsTyping(false);
+  //   }
+  // }, [isTyping, finishedTyping]);
 
   const htmlText = children.props.dangerouslySetInnerHTML.__html;
   // console.log("children :>> ", htmlText);
 
-  function handleOnFinishedTyping(isFinished) {
-    distpatch(handleFinishedTyping(isFinished));
-    // if (resetTyping === false) {
-    //   return;
-    // } else if (isFinished === true) {
-    //   distpatch(handleFinishedTyping(isFinished));
-    // }
+  function handleOnFinishedTyping() {
+    console.log("HANDLE FINISHED TYPING!!  HANDLE-ON-FINISHED-TYPING-INVOKED");
+    console.log("HANDLE FINISHED TYPING!!", isTyping);
+    if (isTyping === true && finishedTyping === false) {
+      console.log("HANDLE FINISHED TYPING!!  DISPATCH");
+    }
   }
 
   return (
     <AnimTyping
       className="text"
+      hideCursor={true}
+      speed={25}
       onFinishedTyping={() => {
-        console.log("HANDLE FINISHED TYPING!!");
-        const isFinished = true;
-        handleOnFinishedTyping(isFinished);
+        handleOnFinishedTyping();
       }}
     >
       {he.decode(htmlText)}
