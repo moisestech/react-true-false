@@ -1,9 +1,11 @@
 html,
 body,
-svg {
+.animated-timer svg {
   height: 100%;
   width: 100%;
   margin: 0;
+  z-index: 0;
+  transform: rotate(-180deg);
 }
 
 .animated-timer {
@@ -43,11 +45,6 @@ svg {
 
 .anim-rect-exit-active {
   opacity: 0;
-}
-
-svg {
-  z-index: 0;
-  transform: rotate(-180deg);
 }
 
 @keyframes animUp {
