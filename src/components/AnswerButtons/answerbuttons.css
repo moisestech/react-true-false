@@ -4,7 +4,7 @@
   z-index: 10;
   display: flex;
   align-items: center;
-  width: 100%;
+  max-width: 500px;
 }
 
 .button {
@@ -15,6 +15,7 @@
   color: white;
   justify-content: center;
   margin: 20px 0 0 0;
+  min-width: 200px;
   /* text-align: center; */
   padding: 20px;
   border-width: 0px;
