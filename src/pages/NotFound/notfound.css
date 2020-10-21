@@ -1,12 +1,30 @@
 /* NOT-FOUND */
 
-.notfound {
+.notfound-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.notfound_header {
-  color: white;
+.notfound-emoji {
+  margin: 0 0 50px 0;
+}
+
+.notfound-header {
+  width: 400px;
+  text-align: center;
+}
+
+.notfound-restart {
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ec61ec85;
+  margin: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
