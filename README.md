@@ -39,35 +39,92 @@ Coming Soon!
 ├── public
 │   ├── _redirects
 │   ├── assets
-│   │   ├── react-truefalse-logo.png
+│   │   ├── not-found.gif
+│   │   ├── react-truefalse-logo-square.png
 │   │   └── true-false-spinner.gif
 │   └── index.html
 ├── src
 │   ├── components
+│   │   ├── AnswerButtons
+│   │   │   ├── answerbuttons.css
+│   │   │   └── index.js
+│   │   ├── FilterQuiz
+│   │   │   └── index.js
+│   │   ├── GlowButton
+│   │   │   ├── glowbutton.css
+│   │   │   └── index.js
 │   │   ├── Logo
-│   │   │   └── index.js
+│   │   │   ├── index.js
+│   │   │   └── logo.css
 │   │   ├── Nav
+│   │   │   ├── index.js
+│   │   │   └── nav.css
+│   │   ├── Question
+│   │   │   ├── components
+│   │   │   │   ├── Category
+│   │   │   │   │   ├── icon-category.css
+│   │   │   │   │   └── index.js
+│   │   │   │   ├── Emoji
+│   │   │   │   │   ├── emoji.css
+│   │   │   │   │   └── index.js
+│   │   │   │   └── IconCategory
+│   │   │   │       └── index.js
+│   │   │   ├── index.js
+│   │   │   └── question.css
+│   │   ├── ResetButton
 │   │   │   └── index.js
+│   │   ├── ResultSymbol
+│   │   │   ├── components
+│   │   │   │   ├── Correct
+│   │   │   │   │   └── index.js
+│   │   │   │   └── Wrong
+│   │   │   │       └── index.js
+│   │   │   ├── index.js
+│   │   │   └── result-symbol.css
+│   │   ├── Stats
+│   │   │   ├── index.js
+│   │   │   └── stats.css
+│   │   ├── Timer
+│   │   │   ├── index.js
+│   │   │   └── timer.css
+│   │   ├── Typing
+│   │   │   ├── index.js
+│   │   │   └── typing.css
+│   │   ├── app.css
 │   │   └── index.js
 │   ├── contexts
-│   ├── index.css
+│   ├── hooks
+│   │   ├── useQueryValid.js
+│   │   └── useQuizValid.js
 │   ├── index.js
 │   ├── pages
 │   │   ├── Home
+│   │   │   ├── home.css
 │   │   │   └── index.js
 │   │   ├── NotFound
-│   │   │   └── index.js
-│   │   └── Quiz
-│   │       └── index.js
+│   │   │   ├── index.js
+│   │   │   └── notfound.css
+│   │   ├── Quiz
+│   │   │   ├── index.js
+│   │   │   └── quiz.css
+│   │   └── Result
+│   │       ├── index.js
+│   │       └── results.css
 │   ├── state
 │   │   ├── actions
-│   │   │   └── questions.js
+│   │   │   ├── answers.js
+│   │   │   ├── questions.js
+│   │   │   ├── quiz.js
+│   │   │   └── typing.js
 │   │   ├── middleware
 │   │   │   ├── index.js
 │   │   │   └── logger.js
 │   │   └── reducers
+│   │       ├── answers.js
 │   │       ├── index.js
-│   │       └── questions.js
+│   │       ├── questions.js
+│   │       ├── quiz.js
+│   │       └── typing.js
 │   └── utils
 │       ├── api.js
 │       └── helpers.js
@@ -91,4 +148,5 @@ Coming Soon!
 - Test going back in url
 - Test multiple url endpoints
 - Test going directly to results page
+- Add Mobile View
 - Host in Netlify
