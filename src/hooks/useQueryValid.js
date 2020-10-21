@@ -39,3 +39,8 @@ export default function QueryValid(query) {
 // ?number=0
 // ?number=11
 // ?number=12sad;f
+// results
+
+QueryValid.propTypes = {
+  query: PropTypes.string.isRequired,
+};
