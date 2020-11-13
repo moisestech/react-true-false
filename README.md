@@ -14,7 +14,6 @@
 - Redux
 - ES6
 - PropTypes
-- Light/Dark Theme
 
 ## 👁️‍🗨️ Project Preview
 
@@ -138,6 +137,7 @@ Coming Soon!
 
 ## 📝 Todos
 
+- Light/Dark Theme
 - Component Timeleft
 - Page Results
 - 404 if question URL is out of bounds
