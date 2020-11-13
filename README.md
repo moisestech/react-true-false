@@ -1,6 +1,6 @@
 # True False Challenge
 
-<img src="https://raw.githubusercontent.com/moisestech/react-true-false/main/public/assets/react-truefalse-logo.png" width="150px"/>
+<img src="https://raw.githubusercontent.com/moisestech/react-true-false/main/public/assets/react-truefalse-logo-square.png" width="150px"/>
 
 **True or False Quiz challenge created in ReactJS**
 
@@ -26,7 +26,7 @@ Coming Soon!
 ├── /                   #Home
 ├── /start              #Start
 ├── /quiz               #Quiz
-├── /quiz:idi           #Quiz:ID
+├── /quiz?number=id     #Quiz:number=ID
 ├── /result             #Result
 └── /*                  #404
 ```
@@ -149,4 +149,5 @@ Coming Soon!
 - Test multiple url endpoints
 - Test going directly to results page
 - Add Mobile View
-- Host in Netlify
+- Request New Images throuch RECEIVE_IMAGES through restartGame();
+- [Game Design Inspiration](https://www.arkadium.com/games/true/)
