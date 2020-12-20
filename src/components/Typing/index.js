@@ -9,23 +9,13 @@ import { useDispatch, useSelector } from "react-redux";
 import AnimTyping from "react-typing-animation";
 import he from "he";
 
+// WORKIN PROGRESS
 export default function Typing({ children }) {
   const [isTyping, setIsTyping] = useState(true);
   const dispatch = useDispatch();
   const { finishedTyping } = useSelector((state) => state.typing);
 
-  // console.group("TYPING REDUCERS:");
-  // console.log("STATE: FINISHED-TYPING: >>", finishedTyping);
-  // console.groupEnd();
-
-  // useEffect(() => {
-  //   if (isTyping === true && finishedTyping === true) {
-  //     setIsTyping(false);
-  //   }
-  // }, [isTyping, finishedTyping]);
-
   const htmlText = children.props.dangerouslySetInnerHTML.__html;
-  // console.log("children :>> ", htmlText);
 
   function handleOnFinishedTyping() {
     console.log("HANDLE FINISHED TYPING!!  HANDLE-ON-FINISHED-TYPING-INVOKED");
